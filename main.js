@@ -21,23 +21,15 @@ inquirer
     }
 	])
    .then(function(answer) {
-   	if (answer.basicConfirm && answer.clozeConfirm == true){
-		console.log("Try again and only choose one choice next time.");
-	}
-	//if I write my code in ternarys, the above conditional statement ^^ doesnt't work. 
-	// else if (answer.basicConfirm && answer.clozeConfirm == false){
-	// 	console.log("Sounds like you're not interested in studying right now. Maybe study later?")
-	// because I'm using inquirer and users arent typing 
-	else if (answer.basicConfirm === true){
-	console.log(firstPresident);
-	}
-	else if (answer.clozeConfirm === true){
-		console.log(firstPresidentCloze)
-	}
-    
-    //tried ternarys for cleaner more elegant code however kept getting the console log as well as flashcards
- 	//answer.basicConfirm === true ? console.log(firstPresident) : answer.basicConfirm === false;
-	// answer.clozeConfirm === true ? console.log(firstPresidentCloze) : answer.clozeConfirm === false;
+   	//should only console log the answer but console logs lin 29 and 31's responses as well, but does work at least
+   	//learned from this homework that I need to build my understanding of logical operators and practice using them more as well as ternarys
+	answer.basicConfirm === true && answer.clozeConfirm == true ? console.log("Try again and only choose one choice next time."):answer.basicConfirm === false && answer.clozeConfirm == false;
+
+	answer.basicConfirm === false && answer.clozeConfirm == false ? console.log("Try again another time."):answer.basicConfirm === true && answer.clozeConfirm == true;
+
+ 	answer.basicConfirm === true ? console.log(firstPresident) : answer.basicConfirm === false;
+
+	answer.clozeConfirm === true ? console.log(firstPresidentCloze) : answer.clozeConfirm === false;
 	
 	});
 
