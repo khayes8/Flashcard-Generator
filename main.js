@@ -23,13 +23,13 @@ inquirer
    .then(function(answer) {
    	//should only console log the answer but console logs lin 29 and 31's responses as well, but does work at least
    	//learned from this homework that I need to build my understanding of logical operators and practice using them more as well as ternarys
-	answer.basicConfirm === true && answer.clozeConfirm == true ? console.log("Try again and only choose one choice next time."):answer.basicConfirm === false && answer.clozeConfirm == false;
+	(answer.basicConfirm === true && answer.clozeConfirm === true) ? console.log("Try again and only choose one choice next time."): console.log("will need to set to true");
 
-	answer.basicConfirm === false && answer.clozeConfirm == false ? console.log("Try again another time."):answer.basicConfirm === true && answer.clozeConfirm == true;
+	(answer.basicConfirm === false && answer.clozeConfirm === false) ? console.log("Try again another time."):console.log("will need to set to true 2");
 
- 	answer.basicConfirm === true ? console.log(firstPresident) : answer.basicConfirm === false;
+ 	answer.basicConfirm === true ? console.log(firstPresident) : answer.basicConfirm = false;
 
-	answer.clozeConfirm === true ? console.log(firstPresidentCloze) : answer.clozeConfirm === false;
+	answer.clozeConfirm === true ? console.log(firstPresidentCloze) : answer.clozeConfirm =false;
 	
 	});
 
